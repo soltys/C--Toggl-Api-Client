@@ -11,16 +11,12 @@ namespace Toggl.Services
 {
     public class UserService
     {
-        
-        
-
         private ITogglService ToggleSrv { get; set; }
 
 
         public UserService(string apiKey)
             : this(new TogglService(apiKey))
         {
-
         }
 
         public UserService()
@@ -54,7 +50,11 @@ namespace Toggl.Services
         /// <returns></returns>
         public User GetCurrentExtended()
         {
-            throw new NotImplementedException();
+            var url = ApiRoutes.User.CurrentUserURlExtended;
+
+            var obj = ToggleSrv.Get(url).GetData<User>();
+
+            return obj;
         }
 
         public List<User> GetFromWorkspace()

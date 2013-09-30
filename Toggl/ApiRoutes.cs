@@ -64,6 +64,8 @@ namespace Toggl
         public class User
         {
             public static readonly string CurrentUserURl = TogglBaseUrl + "/me";
+
+            public static readonly string CurrentUserURlExtended = TogglBaseUrl + "/me?with_related_data=true";
         }
     }
 }

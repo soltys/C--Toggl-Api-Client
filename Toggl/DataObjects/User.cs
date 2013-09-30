@@ -108,5 +108,6 @@ namespace Toggl
         [JsonProperty(PropertyName = "send_timer_notifications")]
         public bool? IsSendTimerNotifications { get; set; }
 
+        public IEnumerable<Project> Projects { get; set; }
     }
 }
